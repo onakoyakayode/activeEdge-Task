@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchTweets } from "./redux/tweetsSlice";
+import { fetchTweets, deleteTweet } from "./redux/tweetsSlice";
 import TweetForm from "./TweetForm";
 
 const Tweets = () => {
@@ -15,9 +15,9 @@ const Tweets = () => {
     }
   }, [status, dispatch]);
 
-  const handleDelete = async () => {
+  const handleDelete = async (tweetId) => {
     try {
-      await dispatch(deleteTweet(tweetToUpdate.id));
+      await dispatch(deleteTweet(tweetId));
       console.log("Tweet deleted successfully");
     } catch (error) {
       console.error("Error deleting tweet:", error.message);
@@ -41,7 +41,7 @@ const Tweets = () => {
                 <p className="mb-2 uppercase">
                   <strong>{tweet.name}</strong>
                 </p>
-                <p>{tweet.body}</p>
+                <p>{tweet.body.text}</p>
               </div>
               <button
                 onClick={() => handleDelete(tweet.id)}

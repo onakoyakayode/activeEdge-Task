@@ -66,7 +66,7 @@ const tweetsSlice = createSlice({
       })
       .addCase(createTweets.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.list.push(action.payload);
+        state.list.unshift(action.payload);
       })
       .addCase(createTweets.rejected, (state, action) => {
         state.status = "failed";
@@ -84,6 +84,17 @@ const tweetsSlice = createSlice({
         );
       })
       .addCase(updateTweet.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      })
+      .addCase(deleteTweet.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(deleteTweet.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.list = state.list.filter((tweet) => tweet.id !== action.payload);
+      })
+      .addCase(deleteTweet.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
       });

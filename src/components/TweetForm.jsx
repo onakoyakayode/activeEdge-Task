@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { createTweets, updateTweet, deleteTweet } from "./redux/tweetsSlice";
 
 const TweetForm = ({ tweetToUpdate, onDelete }) => {
@@ -10,6 +10,8 @@ const TweetForm = ({ tweetToUpdate, onDelete }) => {
   useEffect(() => {
     if (tweetToUpdate) {
       setTweetText(tweetToUpdate.body);
+    } else {
+      setTweetText("");
     }
   }, [tweetToUpdate]);
 
