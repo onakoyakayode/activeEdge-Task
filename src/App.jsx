@@ -6,8 +6,6 @@ import ArtistAlbum from "./components/ArtistAlbum";
 import Tweets from "./components/Tweets";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div>
       <Router>
