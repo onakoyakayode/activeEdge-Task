@@ -35,7 +35,7 @@ const Tweets = () => {
           {tweets.map((tweet) => (
             <li
               key={tweet.id}
-              className="border-b-1 border-gray-600 flex items-end gap-3 w-[80%]"
+              className="border-b-1 border-gray-600 flex items-end gap-3 w-full lg:w-[80%]"
             >
               <div>
                 <p className="mb-2 uppercase">

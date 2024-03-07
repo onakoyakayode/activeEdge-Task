@@ -28,13 +28,18 @@ const ArtistAlbum = () => {
               <h4 className="text-center mb-3">{album.title}</h4>
               <ul className="flex justify-center gap-3 w-full flex-wrap overflow-hidden">
                 {album.photos.map((photo) => (
-                  <li key={photo.id} className="w-[250px] h-[250px]">
+                  <li
+                    key={photo.id}
+                    className="w-[120px] lg:w-[250px] h-[200px] lg:h-[250px] mb-[10px]"
+                  >
                     <img
                       src={photo.url}
                       alt={photo.title}
                       className="w-[100%] h-[80%] object-cover"
                     />
-                    <p>{photo.title}</p>
+                    <p className="text-[11px] lg:text-xl h-max-content">
+                      {photo.title}
+                    </p>
                   </li>
                 ))}
               </ul>

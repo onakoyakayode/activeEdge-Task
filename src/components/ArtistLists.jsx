@@ -25,7 +25,7 @@ const ArtistLists = () => {
           {artists.map((artist) => (
             <li
               key={artist.id}
-              className="flex flex-col items-center justify-between w-[250px] h-[300px] shadow rounded py-4"
+              className="flex flex-col items-center justify-between w-[80%] h-[300px] mb-7 lg:mb-0 lg:w-[250px] lg:h-[300px] shadow-lg rounded py-4"
             >
               <div></div>
               <Link

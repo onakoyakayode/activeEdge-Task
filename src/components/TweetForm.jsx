@@ -51,7 +51,7 @@ const TweetForm = ({ tweetToUpdate, onDelete }) => {
           value={tweetText}
           onChange={(e) => setTweetText(e.target.value)}
           placeholder="What is on your mind......"
-          className="border border-gray-500 p-2 w-[45%]"
+          className="border border-gray-500 p-2 w-full lg:w-[45%]"
           cols="30"
           rows="10"
         ></textarea>
@@ -62,7 +62,7 @@ const TweetForm = ({ tweetToUpdate, onDelete }) => {
         )}
         <button
           type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded w-[10%]"
+          className="bg-blue-500 text-white px-4 py-2 rounded w-[20%] lg:w-[10%]"
         >
           {tweetToUpdate ? "Update" : "Tweet"}
         </button>
